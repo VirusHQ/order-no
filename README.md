@@ -3,7 +3,7 @@ Node.js, module to generate an order number in any length.
 
 Generate your "unique" Order No:
 
-```
+```javascript
 // Final length = uidLength + oidLength + randomLength;
 
 const no = orderNo.makeOrderNo(1, 5);
