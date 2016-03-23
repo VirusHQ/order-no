@@ -1,0 +1,28 @@
+{
+  "name": "order-no",
+  "version": "1.0.0",
+  "description": "A module to generate an order number in any length.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rankun203/order-no.git"
+  },
+  "keywords": [
+    "order",
+    "number",
+    "youdar",
+    "c2c",
+    "e-commerce",
+    "random",
+    "pad"
+  ],
+  "author": "Kun Ran <rankun203@gmail.com> (http://blog.rankun.org)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rankun203/order-no/issues"
+  },
+  "homepage": "https://github.com/rankun203/order-no#readme"
+}
