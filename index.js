@@ -10,17 +10,21 @@
  * 订单号: oid{4}uid{4}random{2}
  * @param uid buyer ID
  * @param oid order ID
- * @param duplicateCheck the function to Check duplicates, skip if undefined
+ * @param config
+ * @param config.uidLength uid factor
+ * @param config.oidLength oid factor
+ * @param config.randomLength random number factor
+ * @param config.duplicateCheck the function to Check duplicates, skip if undefined
  */
-function makeOrderNo(uid, oid, duplicateCheck) {
-    const uidLength    = 1,
-          oidLength    = 7,
-          randomLength = 2,
+function makeOrderNo(uid, oid, config) {
+    const uidLength    = config && config.uidLength || 1,
+          oidLength    = config && config.oidLength || 7,
+          randomLength = config && config.randomLength || 2,
           sUid         = fillOrSubToFixed(String(uid), uidLength),
           sOid         = fillOrSubToFixed(String(oid), oidLength);
 
     const orderNo     = sUid + sOid + random(randomLength),
-          sameOrderNo = duplicateCheck && duplicateCheck({orderNo: orderNo}) || false;
+          sameOrderNo = config && config.duplicateCheck && config.duplicateCheck({orderNo: orderNo}) || false;
 
     return sameOrderNo && sameOrderNo.length > 0 ? makeOrderNo(uid, oid) : orderNo;
 }
