@@ -4,7 +4,8 @@
  */
 'use strict';
 
-const orderNo = require('./');
+// const orderNo = require('./');
+const orderNo = require('order-no');
 
 const no = orderNo.makeOrderNo(1, 5);
 
